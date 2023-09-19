@@ -5,7 +5,7 @@ import SearchBar from "./Components/SearchBar";
 import Saved from "./Components/Saved";
 import axios from "axios";
 
-const getData = (setData, search) => {
+const getData = (setData, search="") => {
   //   axios.get("http://localhost:8080/recipes").then((res) => {
   axios.get(`http://localhost:8080/saved?q=${search}`).then((res) => {
     // console.log(res)
@@ -31,7 +31,6 @@ function App() {
   };
 
   const handleSearch = (search) => {
-    console.log(search);
     getData(setData, search);
   };
 

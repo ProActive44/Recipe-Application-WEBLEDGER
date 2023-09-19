@@ -27,6 +27,7 @@ const SearchBar = ({ search, setSearch, isSaved, changePage, handleSearch }) => 
         <br />
         <input
           id="searchBar"
+          placeholder="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
