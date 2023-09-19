@@ -1,16 +1,22 @@
 import React, { useEffect } from "react";
 
-const SearchBar = ({ search, setSearch, isSaved, changePage, handleSearch }) => {
+const SearchBar = ({
+  search,
+  setSearch,
+  isSaved,
+  changePage,
+  handleSearch,
+}) => {
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
       if (search) {
-        handleSearch(search)
+        handleSearch(search);
       }
     }
   };
 
   useEffect(() => {
-    // Added an event listener to the Enter Key 
+    // Added an event listener to the Enter Key
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {

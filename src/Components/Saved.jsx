@@ -2,10 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import EachDiv from "./EachDiv";
 
-
-
-const Saved = ({data, getData}) => {
-
+const Saved = ({ data, getData }) => {
   useEffect(() => {
     getData();
   }, []);
@@ -14,9 +11,7 @@ const Saved = ({data, getData}) => {
     <div>
       <div className="AllData">
         {data?.map((ele, idx) => {
-          return (
-            <EachDiv key={ele.id} ele={ele}/>
-          );
+          return <EachDiv key={ele.id} ele={ele} />;
         })}
       </div>
     </div>

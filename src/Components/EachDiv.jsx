@@ -26,7 +26,6 @@ const EachDiv = ({ ele }) => {
     checkIfSaved(ele.id, setSave);
   }, [save]);
 
-
   return (
     <div key={ele.id} className="EachData">
       <img src={ele.image} className="recipeImg" />
