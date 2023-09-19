@@ -3,25 +3,7 @@ import "./App.css";
 import AllRecipes from "./Components/AllRecipes";
 import SearchBar from "./Components/SearchBar";
 import Saved from "./Components/Saved";
-import axios from "axios";
-
-const getData = (setData, search = "") => {
-  axios
-    .get(`${process.env.REACT_APP_API_URL}/recipes?q=${search}`)
-    .then((res) => {
-      // axios.get(`${process.env.REACT_APP_API_URL}/saved?q=${search}`).then((res) => {
-
-      setData(res.data.data);
-    });
-};
-
-const getSavedData = (setData, search = "") => {
-  axios
-    .get(`${process.env.REACT_APP_API_URL}/saved?q=${search}`)
-    .then((res) => {
-      setData(res.data.data);
-    });
-};
+import { getData, getSavedData } from "./Helper/action";
 
 function App() {
   const [isSaved, setSaved] = useState(false);
@@ -38,7 +20,6 @@ function App() {
   };
 
   const handleSavedSearch = (search) => {
-    console.log(search);
     getSavedData(setSavedData, search);
   };
 
